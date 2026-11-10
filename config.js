@@ -7,13 +7,13 @@
 window.SALE_CONFIG = {
   // Link to the Google Sheet, published as CSV (see SETUP-GUIDE.md, step 4).
   // Leave empty ("") to show sample items as a preview.
-  sheetCsvUrl: "",
+  sheetCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRupavB0JqvDETS3W-82aCu8cnfZC0bJakFLMbejNnTRo6J_ALnwf-NSCt_ZrCQwUH_CTHv6qkSVZJv/pub?output=csv",
 
   // Your WhatsApp number in international format, digits only.
   // Mexico example: "5215512345678"   USA example: "15551234567"
   whatsappNumber: "",
 
-  // Currency symbol shown before prices.
+  // Currency symbol shown before prices (prices are in Mexican pesos).
   currencySymbol: "$",
 
   // Site title in both languages.
