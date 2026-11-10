@@ -285,6 +285,9 @@
   }
   function waLink(item) {
     var num = String(CFG.whatsappNumber || '').replace(/\D/g, '');
+    if (!num && CFG.whatsappCode) {
+      try { num = atob(CFG.whatsappCode).split('').reverse().join(''); } catch (e) { num = ''; }
+    }
     var msg = item
       ? t('waItem')(item.title[state.lang], priceLabel(item.price), itemUrl(item))
       : t('waGeneral');

@@ -9,9 +9,9 @@ window.SALE_CONFIG = {
   // Leave empty ("") to show sample items as a preview.
   sheetCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRupavB0JqvDETS3W-82aCu8cnfZC0bJakFLMbejNnTRo6J_ALnwf-NSCt_ZrCQwUH_CTHv6qkSVZJv/pub?output=csv",
 
-  // Your WhatsApp number in international format, digits only.
-  // Mexico example: "5215512345678"   USA example: "15551234567"
-  whatsappNumber: "",
+  // Your WhatsApp number, scrambled so it isn't readable as plain text in the code.
+  // Ask Claude to change it — it's the number's digits reversed, then base64-encoded.
+  whatsappCode: "",
 
   // Currency symbol shown before prices (prices are in Mexican pesos).
   currencySymbol: "$",
