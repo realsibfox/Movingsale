@@ -28,6 +28,9 @@ window.SALE_CONFIG = {
   // Areas of the city where you can meet buyers.
   meetAreas: ["Macroplaza", "Reforma", "Volcanes"],
 
+  // Currency note shown in the "How it works" box.
+  currencyNote: { en: "Mexican pesos (MXN)", es: "Pesos mexicanos (MXN)" },
+
   // How you accept payment.
   payment: { en: "Cash or bank transfer", es: "Efectivo o transferencia" },
 

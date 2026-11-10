@@ -17,6 +17,7 @@
       meetAreas: 'Meet-up areas',
       meetNote: 'We agree on the exact place and time over WhatsApp.',
       payment: 'Payment',
+      prices: 'Prices',
       until: 'Sale ends',
       contactWa: 'Message me on WhatsApp',
       interested: "I'm interested — WhatsApp",
@@ -62,6 +63,7 @@
       meetAreas: 'Zonas de entrega',
       meetNote: 'Acordamos el lugar y la hora exactos por WhatsApp.',
       payment: 'Pago',
+      prices: 'Precios',
       until: 'La venta termina',
       contactWa: 'Escríbeme por WhatsApp',
       interested: 'Me interesa — WhatsApp',
@@ -309,6 +311,7 @@
       parts.push('<li><strong>' + esc(t('meetAreas')) + ':</strong> ' + esc(areas.join(' - ')) +
         '<br><span class="muted">' + esc(t('meetNote')) + '</span></li>');
     }
+    if (CFG.currencyNote) parts.push('<li><strong>' + esc(t('prices')) + ':</strong> ' + esc(L(CFG.currencyNote)) + '</li>');
     if (CFG.payment) parts.push('<li><strong>' + esc(t('payment')) + ':</strong> ' + esc(L(CFG.payment)) + '</li>');
     if (CFG.endDate) {
       var d = new Date(CFG.endDate + 'T12:00:00');
