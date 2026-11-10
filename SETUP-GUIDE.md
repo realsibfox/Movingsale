@@ -36,11 +36,13 @@ The sheet will have these columns: **A** Timestamp, **B** Title, **C** Descripti
 
 Type these headers in row 1 of the next empty columns:
 
-| Column | Row 1 (header) | Row 2 (paste this exactly) |
-|---|---|---|
-| **G** | `Status` | *(leave empty)* |
-| **H** | `Title ES` | `=MAP(B2:B, LAMBDA(x, IF(x="", "", GOOGLETRANSLATE(x, "en", "es"))))` |
-| **I** | `Description ES` | `=MAP(C2:C, LAMBDA(x, IF(x="", "", GOOGLETRANSLATE(x, "en", "es"))))` |
+| Column | Row 1 (paste this exactly) |
+|---|---|
+| **G** | `Status` |
+| **H** | `={"Title ES"; MAP(B2:B, LAMBDA(x, IF(x="", "", GOOGLETRANSLATE(x, "en", "es"))))}` |
+| **I** | `={"Description ES"; MAP(C2:C, LAMBDA(x, IF(x="", "", GOOGLETRANSLATE(x, "en", "es"))))}` |
+
+The formulas go in **row 1**: each one writes its own header and then fills the column below it. Leave everything under H1 and I1 empty. (A formula in row 2 breaks when the Form adds a new row, and shows `#REF!`.)
 
 Columns H and I now fill with a Spanish translation automatically for every new item.
 
@@ -87,7 +89,7 @@ Also send Claude:
 
 The site builds its category buttons from whatever categories your items use. There's no separate list to keep up to date.
 
-- **Add a category:** in the Form, edit the *Category* question and add an option. Write it in both languages with a slash: `Toys / Juguetes`. English shows the left side and Spanish the right.
+- **Add a category:** in the Form, edit the *Category* question and add an option. Write it in both languages with a slash: `Toys / Juguetes` (spaces around the slash are optional). English shows the left side and Spanish the right.
 - **Common categories don't need the slash.** These already have Spanish names: Furniture, Kitchen, Clothing, Home & Linens, Electronics, Appliances, Decor, Books, Toys, Kids, Tools, Sports, Shoes, Bathroom, Office, Garden, Other.
 - **A button appears** once at least one item uses that category, and **disappears** when none do.
 - **Renaming** a category in the Form only changes *new* items. To move existing items, edit their *Category* cells in the sheet (column E).
