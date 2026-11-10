@@ -11,7 +11,7 @@ window.SALE_CONFIG = {
 
   // Your WhatsApp number, scrambled so it isn't readable as plain text in the code.
   // Ask Claude to change it — it's the number's digits reversed, then base64-encoded.
-  whatsappCode: "",
+  whatsappCode: "MjI3NzIyMzE1OTI1",
 
   // Currency symbol shown before prices (prices are in Mexican pesos).
   currencySymbol: "$",
