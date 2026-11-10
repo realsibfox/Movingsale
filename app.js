@@ -265,7 +265,11 @@
     return id ? 'https://drive.google.com/thumbnail?id=' + id + '&sz=w' + width : url;
   }
 
+  // A category can be written "English / Español" (e.g. "Toys / Juguetes")
+  // to set its Spanish name directly; otherwise the built-in list is used.
   function catLabel(cat) {
+    var parts = cat.split(/\s+\/\s+/);
+    if (parts.length > 1) return (state.lang === 'es' ? parts[1] : parts[0]).trim();
     if (state.lang !== 'es') return cat;
     return CATEGORY_ES[cat.toLowerCase().trim()] || cat;
   }
@@ -323,9 +327,11 @@
     state.items.forEach(function (it) { counts[it.category] = (counts[it.category] || 0) + 1; });
     var order = (CFG.categoryOrder || []).map(function (c) { return c.toLowerCase(); });
     return Object.keys(counts).sort(function (a, b) {
-      var ia = order.indexOf(a.toLowerCase()), ib = order.indexOf(b.toLowerCase());
+      var ia = order.indexOf(a.split(/\s+\/\s+/)[0].toLowerCase()), ib = order.indexOf(b.split(/\s+\/\s+/)[0].toLowerCase());
       if (ia === -1) ia = 999;
       if (ib === -1) ib = 999;
+      if (/^(other|otros)\b/i.test(a)) ia = 1000; // "Other" always last
+      if (/^(other|otros)\b/i.test(b)) ib = 1000;
       return ia - ib || a.localeCompare(b);
     }).map(function (c) { return { name: c, count: counts[c] }; });
   }

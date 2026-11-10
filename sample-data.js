@@ -15,6 +15,6 @@ Ancho 210 cm."
 11/01/2026 10:35:00,Running shoes (men's 9),Worn a few times.,30,Clothing,,,Tenis para correr (hombre 9),Usados pocas veces.
 11/01/2026 10:40:00,Queen duvet + 2 pillows,Washed and clean.,45,Home & Linens,,,Edredón matrimonial + 2 almohadas,Lavados y limpios.
 11/01/2026 10:45:00,Bath towels (set of 4),Light blue.,15,Home & Linens,,Sold,Toallas de baño (juego de 4),Azul claro.
-11/01/2026 10:50:00,Table lamp,Warm light. Bulb included.,18,Decor,,,Lámpara de mesa,Luz cálida. Incluye foco.
+11/01/2026 10:50:00,Table lamp,Warm light. Bulb included.,18,Lighting / Iluminación,,,Lámpara de mesa,Luz cálida. Incluye foco.
 11/01/2026 10:55:00,Moving boxes,About 15 flattened boxes. Free to whoever picks them up.,0,Other,,,Cajas de mudanza,Unas 15 cajas desarmadas. Gratis para quien las recoja.
 `;

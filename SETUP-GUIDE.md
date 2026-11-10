@@ -26,7 +26,7 @@ Photos  →  a Google Drive folder (created automatically by the Form)
 | `Category` | Dropdown | Options: `Furniture`, `Kitchen`, `Clothing`, `Home & Linens`, `Electronics`, `Decor`, `Other` |
 | `Photos` | File upload | Allow only **Image**, max **10** files, max size **10 MB** |
 
-   You can add or rename categories in the dropdown. Spanish names are built in for common ones like Furniture → Muebles and Kitchen → Cocina. If you add a new one, tell Claude its Spanish name.
+   **Choosing your own categories:** the dropdown options *are* your categories. Add, rename or remove them as you like. See "Managing categories" below.
 
 3. Click the **Responses** tab, then **Link to Sheets**, then **Create a new spreadsheet**.
 
@@ -82,6 +82,16 @@ Also send Claude:
 - **Take an item down without deleting it:** type `Hide` in **Status**.
 - **Change a price or description:** edit the cell in the sheet.
 - **Share one item:** open it on the site and tap **Share**. Buyers who tap "I'm interested" send you a WhatsApp message that already includes the item name, price and link.
+
+## Managing categories
+
+The site builds its category buttons from whatever categories your items use. There's no separate list to keep up to date.
+
+- **Add a category:** in the Form, edit the *Category* question and add an option. Write it in both languages with a slash: `Toys / Juguetes`. English shows the left side and Spanish the right.
+- **Common categories don't need the slash.** These already have Spanish names: Furniture, Kitchen, Clothing, Home & Linens, Electronics, Appliances, Decor, Books, Toys, Kids, Tools, Sports, Shoes, Bathroom, Office, Garden, Other.
+- **A button appears** once at least one item uses that category, and **disappears** when none do.
+- **Renaming** a category in the Form only changes *new* items. To move existing items, edit their *Category* cells in the sheet (column E).
+- **Button order:** Furniture, Kitchen, Clothing, Home & Linens, Electronics, Decor, then any others alphabetically, with *Other* always last. To change the order, tell Claude, or edit `categoryOrder` in `config.js`.
 
 ## If something looks wrong
 
