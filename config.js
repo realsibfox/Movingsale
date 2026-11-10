@@ -25,12 +25,8 @@ window.SALE_CONFIG = {
     es: "¡Todo se tiene que ir! Busca por categoría y escríbeme por WhatsApp.",
   },
 
-  // The 2–3 areas of the city where you can meet buyers.
-  meetAreas: [
-    { en: "[Area 1]", es: "[Zona 1]" },
-    { en: "[Area 2]", es: "[Zona 2]" },
-    { en: "[Area 3]", es: "[Zona 3]" },
-  ],
+  // Areas of the city where you can meet buyers.
+  meetAreas: ["Huayapam", "Volcanes", "Reforma", "Macroplaza"],
 
   // How you accept payment.
   payment: { en: "Cash or bank transfer", es: "Efectivo o transferencia" },
