@@ -306,7 +306,7 @@
     var areas = (CFG.meetAreas || []).map(L).filter(Boolean);
     var parts = [];
     if (areas.length) {
-      parts.push('<li><strong>' + esc(t('meetAreas')) + ':</strong> ' + esc(areas.join(' · ')) +
+      parts.push('<li><strong>' + esc(t('meetAreas')) + ':</strong> ' + esc(areas.join(' - ')) +
         '<br><span class="muted">' + esc(t('meetNote')) + '</span></li>');
     }
     if (CFG.payment) parts.push('<li><strong>' + esc(t('payment')) + ':</strong> ' + esc(L(CFG.payment)) + '</li>');

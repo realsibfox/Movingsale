@@ -26,7 +26,7 @@ window.SALE_CONFIG = {
   },
 
   // Areas of the city where you can meet buyers.
-  meetAreas: ["Huayapam", "Volcanes", "Reforma", "Macroplaza"],
+  meetAreas: ["Macroplaza", "Reforma", "Volcanes"],
 
   // How you accept payment.
   payment: { en: "Cash or bank transfer", es: "Efectivo o transferencia" },
