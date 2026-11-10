@@ -363,7 +363,7 @@
 
   function card(it) {
     var img = it.photos.length
-      ? '<img src="' + esc(imgUrl(it.photos[0], 600)) + '" alt="" loading="lazy" decoding="async">'
+      ? '<img referrerpolicy="no-referrer" src="' + esc(imgUrl(it.photos[0], 600)) + '" alt="" loading="lazy" decoding="async">'
       : placeholder();
     return '<li class="card' + (it.sold ? ' is-sold' : '') + '">' +
       '<a href="#/item/' + it.id + '">' +
@@ -460,7 +460,7 @@
         '<div class="slides" tabindex="0">' +
         it.photos.map(function (p, i) {
           return '<a class="slide" href="' + esc(imgUrl(p, 2000)) + '" target="_blank" rel="noopener">' +
-            '<img src="' + esc(imgUrl(p, 1200)) + '" alt="' + esc(it.title[state.lang] + ' — ' + t('photo')(i + 1, n)) + '"' + (i ? ' loading="lazy"' : '') + '></a>';
+            '<img referrerpolicy="no-referrer" src="' + esc(imgUrl(p, 1200)) + '" alt="' + esc(it.title[state.lang] + ' — ' + t('photo')(i + 1, n)) + '"' + (i ? ' loading="lazy"' : '') + '></a>';
         }).join('') +
         '</div>' +
         (n > 1 ? '<button type="button" class="nav prev" aria-label="' + esc(t('prev')) + '">‹</button>' +
