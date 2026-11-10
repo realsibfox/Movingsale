@@ -30,23 +30,21 @@ Photos  →  a Google Drive folder (created automatically by the Form)
 
 3. Click the **Responses** tab, then **Link to Sheets**, then **Create a new spreadsheet**.
 
-## Step 2 — Set up the Google Sheet (once)
+## Step 2 — Add a "Site" tab with Spanish translations (once)
 
-The sheet will have these columns: **A** Timestamp, **B** Title, **C** Description, **D** Price, **E** Category, **F** Photos.
+Google formats the Form's response tab as a *table*, and tables don't accept translation formulas. So the website reads from a second tab that copies your items and adds the Spanish text.
 
-Type these headers in row 1 of the next empty columns:
+1. In the **Form Responses 1** tab, type `Status` in the first empty heading cell after *Photos* (column **G**). This is where you'll type "Sold" later.
+2. Click **+** at the bottom left to add a new tab. You can rename it `Site`.
+3. In cell **A1** of the new tab, paste this into the formula bar and press Enter:
 
-| Column | Row 1 (paste this exactly) |
-|---|---|
-| **G** | `Status` |
-| **H** | `={"Title ES"; MAP(B2:B, LAMBDA(x, IF(x="", "", GOOGLETRANSLATE(x, "en", "es"))))}` |
-| **I** | `={"Description ES"; MAP(C2:C, LAMBDA(x, IF(x="", "", GOOGLETRANSLATE(x, "en", "es"))))}` |
+```
+={'Form Responses 1'!A1:G, {"Title ES"; MAP('Form Responses 1'!B2:B, LAMBDA(x, IF(x="", "", GOOGLETRANSLATE(x, "en", "es"))))}, {"Description ES"; MAP('Form Responses 1'!C2:C, LAMBDA(x, IF(x="", "", GOOGLETRANSLATE(x, "en", "es"))))}}
+```
 
-The formulas go in **row 1**: each one writes its own header and then fills the column below it. Leave everything under H1 and I1 empty. (A formula in row 2 breaks when the Form adds a new row, and shows `#REF!`.)
+The new tab fills with your items, plus two Spanish columns. **Never type in this tab.** Make all changes (Sold, prices, descriptions) in *Form Responses 1*.
 
-Columns H and I now fill with a Spanish translation automatically for every new item.
-
-**Fixing a bad translation (optional).** Don't type over column H or I, because that breaks the formula. Instead, add a column **J** called `Title ES fix` and a column **K** called `Description ES fix`. Anything you type there is used instead of the automatic translation.
+**Fixing a bad translation (optional).** Add columns `Title ES fix` and `Description ES fix` to the right of Status (H and I) in *Form Responses 1*. Then change `A1:G` in the formula to `A1:I`. Anything you type in those columns is used instead of the automatic translation.
 
 ## Step 3 — Let the website show the photos (once)
 
@@ -60,7 +58,7 @@ Columns H and I now fill with a Spanish translation automatically for every new 
 ## Step 4 — Connect the sheet to the website (once)
 
 1. In the Google Sheet: **File → Share → Publish to web**.
-2. In the first dropdown pick **Form Responses 1**, and in the second pick **Comma-separated values (.csv)**. Click **Publish**.
+2. In the first dropdown pick the **Site** tab (the one with the formula), and in the second pick **Comma-separated values (.csv)**. Click **Publish**.
 3. Copy the link it shows you (it ends in `output=csv`) and send it to Claude. Claude puts it in `config.js`.
 
 Also send Claude:
@@ -99,4 +97,4 @@ The site builds its category buttons from whatever categories your items use. Th
 
 - **Photos don't show:** check Step 3 (the folder must be shared as *Anyone with the link*).
 - **Changes don't appear:** wait 5 minutes and refresh. Google only refreshes the published sheet every few minutes.
-- **Spanish shows English text:** the translation formula may still be loading. Check columns H and I in the sheet.
+- **Spanish shows English text:** the translation formula may still be loading. Check the last two columns of the Site tab.

@@ -7,7 +7,7 @@
 window.SALE_CONFIG = {
   // Link to the Google Sheet, published as CSV (see SETUP-GUIDE.md, step 4).
   // Leave empty ("") to show sample items as a preview.
-  sheetCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRupavB0JqvDETS3W-82aCu8cnfZC0bJakFLMbejNnTRo6J_ALnwf-NSCt_ZrCQwUH_CTHv6qkSVZJv/pub?output=csv",
+  sheetCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRupavB0JqvDETS3W-82aCu8cnfZC0bJakFLMbejNnTRo6J_ALnwf-NSCt_ZrCQwUH_CTHv6qkSVZJv/pub?gid=1344889761&single=true&output=csv",
 
   // Your WhatsApp number, scrambled so it isn't readable as plain text in the code.
   // Ask Claude to change it — it's the number's digits reversed, then base64-encoded.
